@@ -1,6 +1,6 @@
 {
     'name': 'Expense IDs',
-    'version': '20.0.1.0.1',
+    'version': '19.0.1.0.1',
     'summary': 'Give every expense a permanent, searchable ID (EXP-00001) with your own prefix',
     'category': 'Human Resources/Expenses',
     'author': 'Growth Stack',
