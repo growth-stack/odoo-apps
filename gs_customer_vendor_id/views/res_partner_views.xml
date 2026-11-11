@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_codes" model="ir.ui.view">
+        <field name="name">res.partner.form.gs.codes</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='function']" position="before">
+                <field name="customer_code" invisible="not customer_code"/>
+                <field name="vendor_code" invisible="not vendor_code"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_list_codes" model="ir.ui.view">
+        <field name="name">res.partner.list.gs.codes</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='complete_name']" position="before">
+                <field name="customer_code" optional="show" width="110px"/>
+                <field name="vendor_code" optional="show" width="110px"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_partner_search_codes" model="ir.ui.view">
+        <field name="name">res.partner.search.gs.codes</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='parent_id']" position="before">
+                <field name="customer_code"/>
+                <field name="vendor_code"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

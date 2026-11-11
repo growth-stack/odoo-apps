@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="seq_customer_code" model="ir.sequence">
+        <field name="name">Customer ID</field>
+        <field name="code">gs.customer.code</field>
+        <field name="prefix">CUS-</field>
+        <field name="padding">5</field>
+        <field name="company_id" eval="False"/>
+    </record>
+    <record id="seq_vendor_code" model="ir.sequence">
+        <field name="name">Vendor ID</field>
+        <field name="code">gs.vendor.code</field>
+        <field name="prefix">VEN-</field>
+        <field name="padding">5</field>
+        <field name="company_id" eval="False"/>
+    </record>
+</odoo>
