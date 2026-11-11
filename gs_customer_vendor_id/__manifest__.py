@@ -1,6 +1,6 @@
 {
     'name': 'Customer and Vendor IDs',
-    'version': '20.0.1.0.0',
+    'version': '20.0.1.0.1',
     'summary': 'Give every customer and vendor a permanent, searchable ID (CUS-00001, VEN-00001) with your own prefix',
     'description': """
 Gives every customer and vendor a permanent ID:
@@ -22,7 +22,8 @@ New IDs use the new prefix; existing IDs never change.
     'category': 'Sales/Sales',
     'author': 'Growth Stack',
     'maintainer': 'Growth Stack',
-    'website': 'https://github.com/growth-stack',
+    'website': 'https://www.growthstack.gs',
+    'support': 'help@growthstack.gs',
     'license': 'LGPL-3',
     'images': ['static/description/banner.png'],
     'depends': ['account'],
