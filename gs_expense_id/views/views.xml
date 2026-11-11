@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hr_expense_view_form_code" model="ir.ui.view">
+        <field name="name">hr.expense.gs.code.hr_expense_view_form_code</field>
+        <field name="model">hr.expense</field>
+        <field name="inherit_id" ref="hr_expense.hr_expense_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_title')]/h1" position="before">
+                <div class="text-muted" invisible="not expense_code"><span class="me-1">Expense ID</span><field name="expense_code" class="fw-bold"/></div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_expense_view_list_code" model="ir.ui.view">
+        <field name="name">hr.expense.gs.code.hr_expense_view_list_code</field>
+        <field name="model">hr.expense</field>
+        <field name="inherit_id" ref="hr_expense.hr_expense_view_expenses_analysis_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='employee_id']" position="before">
+                <field name="expense_code" optional="show" width="110px"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_expense_view_search_code" model="ir.ui.view">
+        <field name="name">hr.expense.gs.code.hr_expense_view_search_code</field>
+        <field name="model">hr.expense</field>
+        <field name="inherit_id" ref="hr_expense.hr_expense_view_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="expense_code"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

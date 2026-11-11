@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_employee_form_code" model="ir.ui.view">
+        <field name="name">hr.employee.gs.code.view_employee_form_code</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//h1[hasclass('o_employee_form_header_info')]" position="after">
+                <div class="text-muted mb-2" invisible="not employee_code"><span class="me-1">Employee ID</span><field name="employee_code" class="fw-bold"/></div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_employee_tree_code" model="ir.ui.view">
+        <field name="name">hr.employee.gs.code.view_employee_tree_code</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <field name="employee_code" optional="show" width="110px"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_employee_filter_code" model="ir.ui.view">
+        <field name="name">hr.employee.gs.code.view_employee_filter_code</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="employee_code"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="hr_kanban_view_employees_code" model="ir.ui.view">
+        <field name="name">hr.employee.gs.code.hr_kanban_view_employees_code</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.hr_kanban_view_employees"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="employee_code" class="text-muted small d-block" invisible="not employee_code"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

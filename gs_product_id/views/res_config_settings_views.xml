@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_gs_code" model="ir.ui.view">
+        <field name="name">res.config.settings.form.gs_product_id</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="product.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@id='product_general_settings']" position="after">
+                <block title="Product IDs" name="gs_product_id_container">
+                    <setting string="Product IDs" help="New products without an Internal Reference get the next ID. References you type yourself are kept.">
+                        <div class="row mt8">
+                            <label for="gs_product_prefix" string="Prefix" class="col-lg-4 o_light_label"/>
+                            <field name="gs_product_prefix" placeholder="PRD-"/>
+                        </div>
+                        <div class="row">
+                            <label for="gs_product_next" string="Next number" class="col-lg-4 o_light_label"/>
+                            <field name="gs_product_next"/>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

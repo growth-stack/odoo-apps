@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_gs_code" model="ir.ui.view">
+        <field name="name">res.config.settings.form.gs_expense_id</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="hr_expense.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='expenses_setting_container']" position="after">
+                <block title="Expense IDs" name="gs_expense_id_container">
+                    <setting string="Expense IDs" help="Prefix and next number for new expense IDs. Existing IDs don't change.">
+                        <div class="row mt8">
+                            <label for="gs_expense_prefix" string="Prefix" class="col-lg-4 o_light_label"/>
+                            <field name="gs_expense_prefix" placeholder="EXP-"/>
+                        </div>
+                        <div class="row">
+                            <label for="gs_expense_next" string="Next number" class="col-lg-4 o_light_label"/>
+                            <field name="gs_expense_next"/>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

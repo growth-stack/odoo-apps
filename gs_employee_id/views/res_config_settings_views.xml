@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_gs_code" model="ir.ui.view">
+        <field name="name">res.config.settings.form.gs_employee_id</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="hr.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='employees_setting_container']" position="after">
+                <block title="Employee IDs" name="gs_employee_id_container">
+                    <setting string="Employee IDs" help="Prefix and next number for new employee IDs. Existing IDs don't change.">
+                        <div class="row mt8">
+                            <label for="gs_employee_prefix" string="Prefix" class="col-lg-4 o_light_label"/>
+                            <field name="gs_employee_prefix" placeholder="EMP-"/>
+                        </div>
+                        <div class="row">
+                            <label for="gs_employee_next" string="Next number" class="col-lg-4 o_light_label"/>
+                            <field name="gs_employee_next"/>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
