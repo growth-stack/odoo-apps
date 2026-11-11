@@ -1,6 +1,6 @@
 {
     'name': 'Customer and Vendor IDs',
-    'version': '20.0.1.0.1',
+    'version': '20.0.1.0.2',
     'summary': 'Give every customer and vendor a permanent, searchable ID (CUS-00001, VEN-00001) with your own prefix',
     'description': """
 Gives every customer and vendor a permanent ID:
