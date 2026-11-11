@@ -1,6 +1,6 @@
 {
     'name': 'Employee IDs',
-    'version': '20.0.1.0.1',
+    'version': '18.0.1.0.1',
     'summary': 'Give every employee a permanent, searchable ID (EMP-00001) with your own prefix',
     'category': 'Human Resources/Employees',
     'author': 'Growth Stack',

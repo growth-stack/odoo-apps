@@ -8,8 +8,9 @@ class HrExpense(models.Model):
         string="Expense ID", copy=False, readonly=True, index='btree_not_null',
         help="Assigned automatically when the record is created. It never changes.")
 
-    _expense_code_unique = models.Constraint(
-        'UNIQUE(expense_code)', "This Expense ID is already used.")
+    _sql_constraints = [
+        ('expense_code_unique', 'UNIQUE(expense_code)', "This Expense ID is already used."),
+    ]
 
     @api.model_create_multi
     def create(self, vals_list):

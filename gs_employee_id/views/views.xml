@@ -5,7 +5,7 @@
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//h1[hasclass('o_employee_form_header_info')]" position="after">
+            <xpath expr="//div[hasclass('oe_title')]/h1" position="after">
                 <div class="text-muted mb-2" invisible="not employee_code"><span class="me-1">Employee ID</span><field name="employee_code" class="fw-bold"/></div>
             </xpath>
         </field>

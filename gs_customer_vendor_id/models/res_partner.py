@@ -12,10 +12,10 @@ class ResPartner(models.Model):
         string="Vendor ID", copy=False, readonly=True, index='btree_not_null',
         help="Assigned automatically the first time this contact becomes a vendor.")
 
-    _customer_code_unique = models.Constraint(
-        'UNIQUE(customer_code)', "This Customer ID is already used by another contact.")
-    _vendor_code_unique = models.Constraint(
-        'UNIQUE(vendor_code)', "This Vendor ID is already used by another contact.")
+    _sql_constraints = [
+        ('customer_code_unique', 'UNIQUE(customer_code)', "This Customer ID is already used by another contact."),
+        ('vendor_code_unique', 'UNIQUE(vendor_code)', "This Vendor ID is already used by another contact."),
+    ]
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -28,6 +28,12 @@ class ResPartner(models.Model):
         if {'customer_rank', 'supplier_rank', 'parent_id'} & set(vals):
             self._gs_assign_codes()
         return res
+
+    def _increase_rank(self, field, n=1):
+        # Odoo 18 raises the rank with plain SQL, which skips write()
+        super()._increase_rank(field, n)
+        if field in ('customer_rank', 'supplier_rank'):
+            self._gs_assign_codes()
 
     def _gs_assign_codes(self):
         """Give a Customer ID / Vendor ID to top-level contacts that are
